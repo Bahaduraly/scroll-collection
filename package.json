@@ -1,8 +1,7 @@
 {
-  "homepage": "http://bahaduraly.github.io/scroll-collection",
   "name": "scroll-collection",
   "private": true,
-  "description": "Infinite Scroll for 414 Studio Collection",
+  "description": "Surreal Abstract NFT Art Collection – 414 Studio",
   "version": "1.0.0",
   "author": "aly",
   "dependencies": {
@@ -31,6 +30,7 @@
   },
   "devDependencies": {
     "postcss-easy-media-query": "^1.0.0",
+    "gh-pages": "^3.2.3",
     "prettier": "^1.18.2"
   },
   "keywords": [
@@ -38,11 +38,14 @@
   ],
   "license": "MIT",
   "scripts": {
-    "deploy": "gatsby build --prefix-paths && gh-pages -d build",
     "build": "gatsby build",
+    "clean": "rm -rf public .cache",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
+    "serve:build": "npm run clean && npm run build && http-server ./public",
     "start": "npm run develop",
+    "start:prod": "npm run build && npm run serve:build",
+    "deploy:github": "npm run clean && npm run build && node ./scripts/deploy-github",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "fetchUnsplash": "node scripts/fetchUnsplash.js"
