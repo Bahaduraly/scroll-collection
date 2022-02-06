@@ -1,8 +1,9 @@
 module.exports = {
+  pathPrefix: "/scroll-collection",
   siteMetadata: {
-    title: `Gatsby Starter Infinite Scroll`,
+    title: `414 STUDIO Collection`,
     description: `Need infinite scroll or pagination in your Gatsby project? This starter is for you.`,
-    author: `baobabKoodaa`,
+    author: `aly`,
   },
   plugins: [
     {
